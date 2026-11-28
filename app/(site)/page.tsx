@@ -14,9 +14,9 @@ import { SITE, YARD } from '@/lib/constants'
 import type { ProductWithPrice } from '@/lib/supabase/types'
 
 export const metadata: Metadata = {
-  title: 'ChumaMart Hardware – Cement, Steel & Building Materials Prices in Nakuru',
+  title: 'ChumaHardware – Cement, Steel & Building Materials Prices in Nakuru',
   description:
-    'Buy cement, steel bars, iron sheets, water tanks, paints and more from ChumaMart in Nakuru Industrial Area. Free delivery in Nakuru town. Pay by M-Pesa online.',
+    'Buy cement, steel bars, iron sheets, water tanks, paints and more from ChumaHardware in Nakuru Industrial Area. Free delivery in Nakuru town. Pay by M-Pesa online.',
 }
 
 export const revalidate = 3600 // ISR: re-generate every hour
@@ -103,7 +103,7 @@ export default async function HomePage() {
                 <FileText className="h-5 w-5" /> Get a Quote
               </Link>
               <a
-                href={whatsappUrl(SITE.whatsapp, 'Hello ChumaMart! I need a quote for building materials.')}
+                href={whatsappUrl(SITE.whatsapp, 'Hello ChumaHardware! I need a quote for building materials.')}
                 target="_blank" rel="noopener noreferrer"
                 className="btn-whatsapp"
               >
@@ -294,7 +294,7 @@ export default async function HomePage() {
                   <MapPin className="h-4 w-4" /> Get Directions
                 </a>
                 <a
-                  href={whatsappUrl(SITE.whatsapp, 'Hello ChumaMart!')}
+                  href={whatsappUrl(SITE.whatsapp, 'Hello ChumaHardware!')}
                   target="_blank" rel="noopener noreferrer"
                   className="btn-whatsapp"
                 >
@@ -305,7 +305,7 @@ export default async function HomePage() {
             <div className="rounded-xl overflow-hidden border border-gray-200 bg-gray-100 aspect-video">
               <iframe
                 src={YARD.mapsEmbedUrl}
-                title="ChumaMart Hardware yard location"
+                title="ChumaHardware yard location"
                 className="w-full h-full border-0"
                 loading="lazy"
                 referrerPolicy="no-referrer-when-downgrade"

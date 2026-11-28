@@ -46,7 +46,7 @@ export default function ContactPage() {
                 <div className="text-brand-700">{SITE.phone}</div>
               </div>
             </a>
-            <a href={whatsappUrl(SITE.whatsapp, 'Hello ChumaMart!')} target="_blank" rel="noopener noreferrer" className="flex gap-3 items-start group">
+            <a href={whatsappUrl(SITE.whatsapp, 'Hello ChumaHardware!')} target="_blank" rel="noopener noreferrer" className="flex gap-3 items-start group">
               <div className="w-10 h-10 rounded-full bg-green-100 flex items-center justify-center flex-shrink-0">
                 <MessageCircle className="h-5 w-5 text-green-600" />
               </div>
@@ -88,7 +88,7 @@ export default function ContactPage() {
           <div className="rounded-xl overflow-hidden border border-gray-200 bg-gray-50 aspect-video">
             <iframe
               src={YARD.mapsEmbedUrl}
-              title="ChumaMart Hardware yard location"
+              title="ChumaHardware yard location"
               className="w-full h-full border-0"
               loading="lazy"
               referrerPolicy="no-referrer-when-downgrade"

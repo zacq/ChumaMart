@@ -130,7 +130,7 @@ function ConcreteCalc({ addItem }: { addItem: AddFn }) {
       </ResultCard>
       <AddToQuoteStrip
         label={`${result.cementBags} bags cement`}
-        shareText={`ChumaMart Calculator: Slab ${input.lengthM}×${input.widthM}×${input.thicknessM}m (${input.mix}) needs ${result.cementBags} cement bags, ${result.sandM3}m³ sand, ${result.ballastM3}m³ ballast.`}
+        shareText={`ChumaHardware Calculator: Slab ${input.lengthM}×${input.widthM}×${input.thicknessM}m (${input.mix}) needs ${result.cementBags} cement bags, ${result.sandM3}m³ sand, ${result.ballastM3}m³ ballast.`}
         lines={[{ product: cement, qty: result.cementBags }]}
         addItem={addItem}
       />
@@ -163,7 +163,7 @@ function RoofingCalc({ addItem }: { addItem: AddFn }) {
       </ResultCard>
       <AddToQuoteStrip
         label={`${result.sheetsMetres} m iron sheets`}
-        shareText={`ChumaMart: Roof ${input.lengthM}×${input.widthM}m at ${input.pitchDeg}° needs ${result.sheetsMetres}m iron sheets, ${result.ridgeMetres}m ridge, ${result.roofingNails}kg nails.`}
+        shareText={`ChumaHardware: Roof ${input.lengthM}×${input.widthM}m at ${input.pitchDeg}° needs ${result.sheetsMetres}m iron sheets, ${result.ridgeMetres}m ridge, ${result.roofingNails}kg nails.`}
         lines={[{ product: sheet, qty: result.sheetsMetres }]}
         addItem={addItem}
       />
@@ -231,7 +231,7 @@ function PaintCalc({ addItem }: { addItem: AddFn }) {
       </ResultCard>
       <AddToQuoteStrip
         label={`${result.litres} L paint`}
-        shareText={`ChumaMart: ${wallArea}m² wall, ${coats} coats → ${result.litres}L paint (${lines.map(l => `${l.qty}× ${l.product!.name}`).join(', ')}).`}
+        shareText={`ChumaHardware: ${wallArea}m² wall, ${coats} coats → ${result.litres}L paint (${lines.map(l => `${l.qty}× ${l.product!.name}`).join(', ')}).`}
         lines={lines}
         addItem={addItem}
       />
@@ -264,7 +264,7 @@ function SteelCalc({ addItem }: { addItem: AddFn }) {
       </ResultCard>
       <AddToQuoteStrip
         label={`${result.totalBars} bars ${inp.barDiameter}`}
-        shareText={`ChumaMart: ${inp.slabLengthM}×${inp.slabWidthM}m slab @ ${inp.barSpacingMM}mm needs ${result.totalBars} ${inp.barDiameter} bars + ${result.bindingWireRolls} binding wire rolls.`}
+        shareText={`ChumaHardware: ${inp.slabLengthM}×${inp.slabWidthM}m slab @ ${inp.barSpacingMM}mm needs ${result.totalBars} ${inp.barDiameter} bars + ${result.bindingWireRolls} binding wire rolls.`}
         lines={[{ product: bar, qty: result.totalBars }, { product: wire, qty: result.bindingWireRolls }]}
         addItem={addItem}
       />
@@ -323,7 +323,7 @@ function BlockworkCalc({ addItem }: { addItem: AddFn }) {
       </ResultCard>
       <AddToQuoteStrip
         label={`${result.blocks} blocks + ${result.cementBags} cement bags`}
-        shareText={`ChumaMart: ${inp.wallLengthM}×${inp.wallHeightM}m wall needs ${result.blocks} blocks + ${result.cementBags} cement bags.`}
+        shareText={`ChumaHardware: ${inp.wallLengthM}×${inp.wallHeightM}m wall needs ${result.blocks} blocks + ${result.cementBags} cement bags.`}
         lines={[{ product: cement, qty: result.cementBags }]}
         addItem={addItem}
       />

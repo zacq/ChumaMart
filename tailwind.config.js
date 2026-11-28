@@ -7,7 +7,7 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        // ChumaMart brand: deep green + amber gold
+        // ChumaHardware brand: deep green + amber gold
         brand: {
           50:  '#f0fdf4',
           100: '#dcfce7',

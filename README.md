@@ -1,6 +1,6 @@
-# ChumaMart Hardware Website v2
+# ChumaHardware Website v2
 
-Mobile-first Next.js 14 PWA for ChumaMart Hardware, Nakuru Industrial Area.
+Mobile-first Next.js 14 PWA for ChumaHardware, Nakuru Industrial Area.
 
 ## Stack
 - **Framework**: Next.js 14 (App Router)

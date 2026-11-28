@@ -6,7 +6,7 @@ import { SITE } from '@/lib/constants'
 import { whatsappUrl } from '@/lib/utils'
 
 export const metadata: Metadata = {
-  title: 'Contractors & Bulk Buyers | ChumaMart Hardware Nakuru',
+  title: 'Contractors & Bulk Buyers | ChumaHardware Nakuru',
   description: 'Bulk building material orders, BOQ processing and trade pricing for contractors and developers in Nakuru. Upload your BOQ and get a full quote.',
 }
 
@@ -42,7 +42,7 @@ export default function ContractorsPage() {
             <FileText className="h-5 w-5" /> Open Quote List
           </Link>
           <a
-            href={whatsappUrl(SITE.whatsapp, 'Hello ChumaMart! I have a BOQ/bulk order I need a quote for.')}
+            href={whatsappUrl(SITE.whatsapp, 'Hello ChumaHardware! I have a BOQ/bulk order I need a quote for.')}
             target="_blank" rel="noopener noreferrer"
             className="btn-whatsapp"
           >

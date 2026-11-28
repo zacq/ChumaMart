@@ -22,7 +22,7 @@ export default function StickyMobileBar() {
       <div className="grid grid-cols-3 divide-x divide-gray-200">
         {/* WhatsApp */}
         <a
-          href={whatsappUrl(SITE.whatsapp, 'Hello ChumaMart! I need a quote.')}
+          href={whatsappUrl(SITE.whatsapp, 'Hello ChumaHardware! I need a quote.')}
           target="_blank"
           rel="noopener noreferrer"
           className="flex flex-col items-center justify-center py-3 gap-0.5 text-[#25D366] hover:bg-green-50 transition-colors min-h-[56px]"
@@ -36,7 +36,7 @@ export default function StickyMobileBar() {
         <a
           href={`tel:${SITE.phone.replace(/\s/g, '')}`}
           className="flex flex-col items-center justify-center py-3 gap-0.5 text-brand-700 hover:bg-brand-50 transition-colors min-h-[56px]"
-          aria-label="Call ChumaMart"
+          aria-label="Call ChumaHardware"
         >
           <Phone className="h-5 w-5" />
           <span className="text-xs font-medium text-gray-700">Call</span>

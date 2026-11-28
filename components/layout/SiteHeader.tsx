@@ -55,8 +55,8 @@ export default function SiteHeader() {
               <span className="text-white font-black text-lg leading-none">C</span>
             </div>
             <div className="hidden xs:block">
-              <div className="font-black text-brand-800 text-sm leading-tight">ChumaMart</div>
-              <div className="text-[10px] text-gray-500 leading-tight">Hardware</div>
+              <div className="font-black text-brand-800 text-sm leading-tight">ChumaHardware</div>
+              <div className="text-[10px] text-gray-500 leading-tight">Nakuru</div>
             </div>
           </Link>
 

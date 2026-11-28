@@ -5,7 +5,7 @@
 // ─────────────────────────────────────────────────────────────────────────────
 
 export const SITE = {
-  name: 'ChumaMart Hardware',
+  name: 'ChumaHardware',
   tagline: 'Reliable Building Materials from Nakuru Industrial Area',
   url: process.env.NEXT_PUBLIC_SITE_URL ?? 'https://chumamarthardware.com',
   email: process.env.NEXT_PUBLIC_BUSINESS_EMAIL ?? 'info@chumamarthardware.com',
@@ -33,10 +33,10 @@ export const YARD = {
 // M-Pesa fallback (OQ-5 dummy)
 export const MPESA = {
   paybill: process.env.NEXT_PUBLIC_MPESA_PAYBILL ?? '522533',
-  account: process.env.NEXT_PUBLIC_MPESA_ACCOUNT ?? 'ChumaMart',
+  account: process.env.NEXT_PUBLIC_MPESA_ACCOUNT ?? 'ChumaHardware',
 }
 
-// OQ-1 — Nakuru town free-delivery areas (dummy list — confirm with ChumaMart)
+// OQ-1 — Nakuru town free-delivery areas (dummy list — confirm with ChumaHardware)
 export const NAKURU_TOWN_AREAS: string[] = [
   'Nakuru Town Centre',
   'Milimani',

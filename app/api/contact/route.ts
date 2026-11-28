@@ -8,8 +8,8 @@ export async function POST(req: NextRequest) {
     const { name, phone, email, message } = await req.json()
     await sendEmail({
       to: SITE.email,
-      subject: `Enquiry from ${name} – ChumaMart Website`,
-      text: `New enquiry from the ChumaMart website:\n\nName: ${name}\nPhone: ${phone}\nEmail: ${email || 'not provided'}\n\nMessage:\n${message}`,
+      subject: `Enquiry from ${name} – ChumaHardware Website`,
+      text: `New enquiry from the ChumaHardware website:\n\nName: ${name}\nPhone: ${phone}\nEmail: ${email || 'not provided'}\n\nMessage:\n${message}`,
     })
     return NextResponse.json({ ok: true })
   } catch (err) {

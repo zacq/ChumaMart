@@ -30,8 +30,8 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   if (!p) return {}
   const price = p.prices ? effectivePrice(p.prices) : null
   return {
-    title: `${p.name} Price in Kenya | ChumaMart Hardware Nakuru`,
-    description: `Buy ${p.name} from ChumaMart Hardware in Nakuru. ${price ? `Price: ${formatPrice(price)} ${p.unit}.` : ''} Free delivery in Nakuru town. Pay by M-Pesa.`,
+    title: `${p.name} Price in Kenya | ChumaHardware Nakuru`,
+    description: `Buy ${p.name} from ChumaHardware in Nakuru. ${price ? `Price: ${formatPrice(price)} ${p.unit}.` : ''} Free delivery in Nakuru town. Pay by M-Pesa.`,
     openGraph: {
       images: p.photos?.[0] ? [{ url: p.photos[0], alt: p.name }] : [],
     },
@@ -62,7 +62,7 @@ export default async function ProductPage({ params }: Props) {
     category_slug: categorySlug,
   }
 
-  const waMessage = `Hello ChumaMart! I'm interested in: ${product.name}${product.size_grade ? ` (${product.size_grade})` : ''}. Please send me a quote.`
+  const waMessage = `Hello ChumaHardware! I'm interested in: ${product.name}${product.size_grade ? ` (${product.size_grade})` : ''}. Please send me a quote.`
 
   return (
     <div className="container-site py-8">
@@ -228,7 +228,7 @@ export default async function ProductPage({ params }: Props) {
                 : product.stock_status === 'out_of_stock'
                 ? 'https://schema.org/OutOfStock'
                 : 'https://schema.org/LimitedAvailability',
-              seller: { '@type': 'Organization', name: 'ChumaMart Hardware' },
+              seller: { '@type': 'Organization', name: 'ChumaHardware' },
             } : undefined,
           }),
         }}

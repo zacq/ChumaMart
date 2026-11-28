@@ -4,7 +4,7 @@ import { createClient } from '@/lib/supabase/server'
 import ProductCard from '@/components/catalogue/ProductCard'
 import type { ProductWithPrice } from '@/lib/supabase/types'
 
-export const metadata: Metadata = { title: 'Search | ChumaMart Hardware' }
+export const metadata: Metadata = { title: 'Search | ChumaHardware' }
 
 interface Props { searchParams: { q?: string } }
 

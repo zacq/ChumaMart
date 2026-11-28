@@ -79,13 +79,13 @@ export async function POST(req: NextRequest) {
     }
 
     if (!payNow) {
-      const smsText = `ChumaMart: Hi ${customerName}! Your quote request ${refNo} has been received. We'll send you a priced quote within 2 hours. Questions? Call ${SITE.phone}`
+      const smsText = `ChumaHardware: Hi ${customerName}! Your quote request ${refNo} has been received. We'll send you a priced quote within 2 hours. Questions? Call ${SITE.phone}`
       await sendSMS(normalizedPhone, smsText)
       if (email) {
         await sendEmail({
           to: email,
           subject: `Quote Request Received – ${refNo}`,
-          text: `Hi ${customerName},\n\nYour quote request (${refNo}) has been received. We'll send you a priced quote with a payment link within 2 hours.\n\nSubtotal: ${formatPrice(total)}\nDelivery: ${inTown ? 'Free (Nakuru town)' : 'To be agreed'}\n\nQuestions? Call or WhatsApp ${SITE.phone}\n\nChumaMart Hardware`,
+          text: `Hi ${customerName},\n\nYour quote request (${refNo}) has been received. We'll send you a priced quote with a payment link within 2 hours.\n\nSubtotal: ${formatPrice(total)}\nDelivery: ${inTown ? 'Free (Nakuru town)' : 'To be agreed'}\n\nQuestions? Call or WhatsApp ${SITE.phone}\n\nChumaHardware`,
         })
       }
     }

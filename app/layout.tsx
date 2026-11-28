@@ -10,21 +10,21 @@ const inter = Inter({ subsets: ['latin'], variable: '--font-inter', display: 'sw
 export const metadata: Metadata = {
   metadataBase: new URL(SITE.url),
   title: {
-    default: 'ChumaMart Hardware – Building Materials Prices in Nakuru',
-    template: '%s | ChumaMart Hardware Nakuru',
+    default: 'ChumaHardware – Building Materials Prices in Nakuru',
+    template: '%s | ChumaHardware Nakuru',
   },
   description:
-    'ChumaMart Hardware sells cement, steel, iron sheets, water tanks, paints and more from Nakuru Industrial Area. Free delivery in Nakuru town. Order online, pay by M-Pesa.',
+    'ChumaHardware sells cement, steel, iron sheets, water tanks, paints and more from Nakuru Industrial Area. Free delivery in Nakuru town. Order online, pay by M-Pesa.',
   keywords: [
     'hardware shop Nakuru', 'cement price Nakuru', 'iron sheets price Nakuru',
     'building materials Nakuru', 'steel price Kenya', 'Kentank price',
-    'Crown paint prices Kenya', 'ChumaMart',
+    'Crown paint prices Kenya', 'ChumaHardware',
   ],
   openGraph: {
     type: 'website',
     locale: 'en_KE',
     siteName: SITE.name,
-    title: 'ChumaMart Hardware – Building Materials Prices in Nakuru',
+    title: 'ChumaHardware – Building Materials Prices in Nakuru',
     description: 'Cement, steel, iron sheets, tanks, paint and more. Free delivery in Nakuru town. Pay by M-Pesa.',
   },
   robots: { index: true, follow: true },

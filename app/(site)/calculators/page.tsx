@@ -4,7 +4,7 @@ import { ArrowRight, Calculator } from 'lucide-react'
 import type { Metadata } from 'next'
 
 export const metadata: Metadata = {
-  title: 'Building Material Calculators | ChumaMart Hardware Nakuru',
+  title: 'Building Material Calculators | ChumaHardware Nakuru',
   description: 'Calculate how much cement, iron sheets, steel bars, paint or water tank capacity you need. Results added straight to your Quote List.',
 }
 

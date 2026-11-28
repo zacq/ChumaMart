@@ -49,7 +49,7 @@ export async function POST(req: NextRequest) {
       phone: msisdn,
       amount,
       accountReference: order.ref_no,
-      transactionDesc: `ChumaMart ${order.ref_no}`,
+      transactionDesc: `ChumaHardware ${order.ref_no}`,
     })
 
     await supabase.from('payments').insert({

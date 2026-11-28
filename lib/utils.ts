@@ -20,7 +20,7 @@ export function formatDate(date: string | Date): string {
   })
 }
 
-/** Generate a unique ChumaMart reference number */
+/** Generate a unique ChumaHardware reference number */
 export function generateRef(): string {
   const year = new Date().getFullYear()
   const rand = Math.floor(Math.random() * 90000) + 10000
@@ -47,7 +47,7 @@ export function buildQuoteListMessage(
     .join('\n')
   const total = lines.reduce((s, l) => s + l.qty * l.unit_price, 0)
   return (
-    `Hello ChumaMart 👋\n\nI'd like a quote for the following:\n\n` +
+    `Hello ChumaHardware 👋\n\nI'd like a quote for the following:\n\n` +
     `${rows}\n\n` +
     `*Total (ex delivery):* KSh ${total.toLocaleString()}\n` +
     `*Delivery location:* ${location}\n\n` +

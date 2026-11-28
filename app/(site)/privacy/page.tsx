@@ -8,7 +8,7 @@ export default function PrivacyPage() {
   return (
     <div className="container-site py-10 max-w-3xl prose-sm space-y-5 text-gray-700">
       <h1 className="text-3xl font-black text-gray-900">Privacy Notice</h1>
-      <p>ChumaMart Hardware (&ldquo;we&rdquo;) processes personal data in line with the Kenya Data Protection Act, 2019.</p>
+      <p>ChumaHardware (&ldquo;we&rdquo;) processes personal data in line with the Kenya Data Protection Act, 2019.</p>
 
       <h2 className="text-lg font-bold text-gray-900">What we collect</h2>
       <p>Your name, phone number, optional email, delivery location, site contact, order details, any BOQ files you upload, and M-Pesa payment references.</p>

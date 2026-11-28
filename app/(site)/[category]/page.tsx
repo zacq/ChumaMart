@@ -67,7 +67,7 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
     'tools-hardware': 'hardware shop Nakuru, nails price Kenya',
   }
   return {
-    title: `${cat.name} Price in Nakuru | ChumaMart Hardware`,
+    title: `${cat.name} Price in Nakuru | ChumaHardware`,
     description: cat.intro_text ?? `Buy ${cat.name.toLowerCase()} in Nakuru at the best prices. Free delivery in Nakuru town. Pay by M-Pesa.`,
     keywords: keywords[params.category],
   }

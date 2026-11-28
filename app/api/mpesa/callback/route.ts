@@ -73,7 +73,7 @@ export async function POST(req: NextRequest) {
     }
 
     const sms =
-      `ChumaMart receipt: ${order.ref_no}\nPaid ${formatPrice(amount)} (M-Pesa ${mpesaReceipt})` +
+      `ChumaHardware receipt: ${order.ref_no}\nPaid ${formatPrice(amount)} (M-Pesa ${mpesaReceipt})` +
       (amounts.balance > 0 ? `\nBalance: ${formatPrice(amounts.balance)}` : '\nFully paid') +
       `\nTrack: ${SITE.url}/track?ref=${order.ref_no}\nWe'll confirm your delivery date shortly.`
     await notifyCustomer(order.customer_id, { sms, subject: `Payment received – ${order.ref_no}` })

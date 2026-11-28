@@ -112,12 +112,12 @@ export async function notifyCustomer(
 
 export function quoteSentMessage(order: Pick<QuoteOrder, 'ref_no' | 'pay_link_token' | 'validity_date'>, amounts: OrderAmounts) {
   const sms =
-    `ChumaMart quote ${order.ref_no}: total ${formatPrice(amounts.grand)}` +
+    `ChumaHardware quote ${order.ref_no}: total ${formatPrice(amounts.grand)}` +
     (amounts.delivery > 0 ? ` incl. delivery ${formatPrice(amounts.delivery)}` : '') +
     (amounts.deposit > 0 && amounts.deposit < amounts.grand ? `. Deposit ${formatPrice(amounts.deposit)}` : '') +
     `. Valid to ${order.validity_date}. Pay: ${payLink(order.pay_link_token)}`
   const email =
-    `Your quotation ${order.ref_no} from ChumaMart Hardware is ready.\n\n` +
+    `Your quotation ${order.ref_no} from ChumaHardware is ready.\n\n` +
     `Subtotal: ${formatPrice(amounts.subtotal)}\n` +
     `Delivery: ${amounts.delivery > 0 ? formatPrice(amounts.delivery) : 'Free / not applicable'}\n` +
     `Total: ${formatPrice(amounts.grand)}\n` +
@@ -125,6 +125,6 @@ export function quoteSentMessage(order: Pick<QuoteOrder, 'ref_no' | 'pay_link_to
     `Valid until: ${order.validity_date}\n\n` +
     `Pay this quote by M-Pesa: ${payLink(order.pay_link_token)}\n` +
     `Download PDF: ${quotePdfLink(order.pay_link_token)}\n\n` +
-    `Questions? Call or WhatsApp ${SITE.phone}.\n\nChumaMart Hardware`
-  return { sms, subject: `Your ChumaMart quotation ${order.ref_no}`, email }
+    `Questions? Call or WhatsApp ${SITE.phone}.\n\nChumaHardware`
+  return { sms, subject: `Your ChumaHardware quotation ${order.ref_no}`, email }
 }

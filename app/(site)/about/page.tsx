@@ -6,8 +6,8 @@ import { SITE, YARD } from '@/lib/constants'
 import { whatsappUrl } from '@/lib/utils'
 
 export const metadata: Metadata = {
-  title: 'About ChumaMart Hardware | Building Materials Nakuru',
-  description: 'ChumaMart Hardware is a trusted building materials supplier based in Nakuru Industrial Area, Kenya. We stock cement, steel, iron sheets, water tanks, paints and more.',
+  title: 'About ChumaHardware | Building Materials Nakuru',
+  description: 'ChumaHardware is a trusted building materials supplier based in Nakuru Industrial Area, Kenya. We stock cement, steel, iron sheets, water tanks, paints and more.',
 }
 
 const BRANDS = ['Bamburi', 'Simba', 'Blue Triangle', 'Rhino', 'Savannah', 'Rai', 'Crown Paints', 'Kentank']
@@ -15,12 +15,12 @@ const BRANDS = ['Bamburi', 'Simba', 'Blue Triangle', 'Rhino', 'Savannah', 'Rai',
 export default function AboutPage() {
   return (
     <div className="container-site py-10">
-      <h1 className="text-3xl font-black text-gray-900 mb-6">About ChumaMart Hardware</h1>
+      <h1 className="text-3xl font-black text-gray-900 mb-6">About ChumaHardware</h1>
 
       <div className="grid gap-10 lg:grid-cols-2 mb-12">
         <div className="space-y-5 text-gray-600">
           <p className="text-lg font-medium text-gray-800">
-            ChumaMart Hardware is a building materials supplier based in Nakuru Industrial Area, Kenya.
+            ChumaHardware is a building materials supplier based in Nakuru Industrial Area, Kenya.
           </p>
           <p>
             We supply cement, reinforcing steel, iron sheets, water tanks, paints, gypsum boards, plumbing fittings, fencing and tools to homeowners, fundis, contractors and developers across Nakuru and the surrounding region.
@@ -93,7 +93,7 @@ export default function AboutPage() {
         </div>
         <div className="mt-4 flex gap-3 flex-wrap">
           <a href={YARD.mapsUrl} target="_blank" rel="noopener noreferrer" className="btn-primary"><MapPin className="h-4 w-4" /> Get Directions</a>
-          <a href={whatsappUrl(SITE.whatsapp, 'Hello ChumaMart!')} target="_blank" rel="noopener noreferrer" className="btn-whatsapp">WhatsApp Us</a>
+          <a href={whatsappUrl(SITE.whatsapp, 'Hello ChumaHardware!')} target="_blank" rel="noopener noreferrer" className="btn-whatsapp">WhatsApp Us</a>
           <Link href="/contact" className="btn-secondary">Enquiry Form</Link>
         </div>
       </div>

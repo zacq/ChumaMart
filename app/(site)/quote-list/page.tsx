@@ -29,10 +29,10 @@ export default function QuoteListPage() {
     const rows = items.map(i =>
       `${i.name} | Qty: ${i.qty} ${i.unit} | Unit: KSh ${i.unit_price.toLocaleString()} | Total: KSh ${(i.qty * i.unit_price).toLocaleString()}`
     ).join('\n')
-    const text = `ChumaMart Hardware – Quote List\nDate: ${new Date().toLocaleDateString('en-KE')}\n\n${rows}\n\nSubtotal: KSh ${total.toLocaleString()}\nDelivery: ${location ? (inTown ? 'Free (Nakuru town)' : 'To be agreed') : 'TBD'}\n\nTo place your order: ${SITE.phone}`
+    const text = `ChumaHardware – Quote List\nDate: ${new Date().toLocaleDateString('en-KE')}\n\n${rows}\n\nSubtotal: KSh ${total.toLocaleString()}\nDelivery: ${location ? (inTown ? 'Free (Nakuru town)' : 'To be agreed') : 'TBD'}\n\nTo place your order: ${SITE.phone}`
     const blob = new Blob([text], { type: 'text/plain' })
     const url = URL.createObjectURL(blob)
-    const a = document.createElement('a'); a.href = url; a.download = 'ChumaMart-Quote-List.txt'; a.click()
+    const a = document.createElement('a'); a.href = url; a.download = 'ChumaHardware-Quote-List.txt'; a.click()
     URL.revokeObjectURL(url)
   }
 

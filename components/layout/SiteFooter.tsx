@@ -39,7 +39,7 @@ export default function SiteFooter() {
                 <span className="text-white font-black text-lg">C</span>
               </div>
               <div>
-                <div className="font-black text-white text-sm">ChumaMart Hardware</div>
+                <div className="font-black text-white text-sm">ChumaHardware</div>
                 <div className="text-[10px] text-gray-400">Nakuru Industrial Area</div>
               </div>
             </div>
@@ -65,7 +65,7 @@ export default function SiteFooter() {
               <li className="flex gap-2">
                 <MessageCircle className="h-4 w-4 text-[#25D366] mt-0.5 flex-shrink-0" />
                 <a
-                  href={whatsappUrl(SITE.whatsapp, 'Hello ChumaMart!')}
+                  href={whatsappUrl(SITE.whatsapp, 'Hello ChumaHardware!')}
                   target="_blank" rel="noopener noreferrer"
                   className="hover:text-white"
                 >
@@ -131,7 +131,7 @@ export default function SiteFooter() {
       {/* Bottom bar */}
       <div className="border-t border-gray-800">
         <div className="container-site py-4 flex flex-col sm:flex-row items-center justify-between gap-2 text-xs text-gray-500">
-          <span>© {new Date().getFullYear()} ChumaMart Hardware. All rights reserved.</span>
+          <span>© {new Date().getFullYear()} ChumaHardware. All rights reserved.</span>
           <div className="flex gap-4">
             <Link href="/privacy" className="hover:text-gray-300">Privacy Policy</Link>
             <Link href="/terms" className="hover:text-gray-300">Terms</Link>

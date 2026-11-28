@@ -4,8 +4,8 @@ import { Truck, CheckCircle, AlertCircle, MapPin } from 'lucide-react'
 import { NAKURU_TOWN_AREAS, YARD, MPESA } from '@/lib/constants'
 
 export const metadata: Metadata = {
-  title: 'Delivery & Transport | ChumaMart Hardware Nakuru',
-  description: 'Free delivery within Nakuru town. Agreed delivery rates outside Nakuru. ChumaMart delivers cement, steel, iron sheets and building materials across the region.',
+  title: 'Delivery & Transport | ChumaHardware Nakuru',
+  description: 'Free delivery within Nakuru town. Agreed delivery rates outside Nakuru. ChumaHardware delivers cement, steel, iron sheets and building materials across the region.',
 }
 
 export default function DeliveryPage() {

@@ -7,8 +7,8 @@ import { formatPrice, formatDate, effectivePrice } from '@/lib/utils'
 import type { ProductWithPrice } from '@/lib/supabase/types'
 
 export const metadata: Metadata = {
-  title: 'Offers & Price Updates | ChumaMart Hardware Nakuru',
-  description: 'Current building material offers and price updates at ChumaMart Hardware Nakuru.',
+  title: 'Offers & Price Updates | ChumaHardware Nakuru',
+  description: 'Current building material offers and price updates at ChumaHardware Nakuru.',
 }
 
 export const revalidate = 3600
@@ -29,7 +29,7 @@ export default async function OffersPage() {
   return (
     <div className="container-site py-10">
       <h1 className="text-3xl font-black text-gray-900 mb-2">Offers & Price Updates</h1>
-      <p className="text-gray-500 mb-8">Current promotions at ChumaMart Hardware. Prices valid until end date shown.</p>
+      <p className="text-gray-500 mb-8">Current promotions at ChumaHardware. Prices valid until end date shown.</p>
 
       {offers.length === 0 ? (
         <div className="text-center py-16">
