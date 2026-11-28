@@ -4,7 +4,7 @@ import { notFound } from 'next/navigation'
 import { createClient } from '@/lib/supabase/server'
 import { formatDate } from '@/lib/utils'
 import ProductCard from '@/components/catalogue/ProductCard'
-import CategoryFilters from '@/components/catalogue/CategoryFilters'
+import CategoryFilters, { SortSelect } from '@/components/catalogue/CategoryFilters'
 import type { Category, ProductWithPrice } from '@/lib/supabase/types'
 
 export const revalidate = 1800
@@ -126,18 +126,7 @@ export default async function CategoryPage({ params, searchParams }: PageProps) 
           {/* Sort + count bar */}
           <div className="flex items-center justify-between mb-5">
             <span className="text-sm text-gray-500">{products.length} products</span>
-            <form method="GET">
-              <select
-                name="sort"
-                defaultValue={filters.sort ?? 'name'}
-                onChange={e => { const f = new FormData(); f.set('sort', e.target.value); window.location.href = `?sort=${e.target.value}` }}
-                className="text-sm border border-gray-300 rounded-lg px-3 py-2 focus:border-brand-500 focus:outline-none"
-              >
-                <option value="name">Name</option>
-                <option value="price_asc">Price: Low to High</option>
-                <option value="popular">Featured first</option>
-              </select>
-            </form>
+            <SortSelect value={filters.sort ?? 'name'} />
           </div>
 
           {products.length > 0 ? (

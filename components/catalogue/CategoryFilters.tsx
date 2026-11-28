@@ -8,6 +8,29 @@ interface CategoryFiltersProps {
   currentFilters: Record<string, string>
 }
 
+export function SortSelect({ value }: { value: string }) {
+  const router       = useRouter()
+  const pathname     = usePathname()
+  const searchParams = useSearchParams()
+
+  return (
+    <select
+      name="sort"
+      value={value}
+      onChange={e => {
+        const params = new URLSearchParams(searchParams.toString())
+        params.set('sort', e.target.value)
+        router.push(`${pathname}?${params.toString()}`)
+      }}
+      className="text-sm border border-gray-300 rounded-lg px-3 py-2 focus:border-brand-500 focus:outline-none"
+    >
+      <option value="name">Name</option>
+      <option value="price_asc">Price: Low to High</option>
+      <option value="popular">Featured first</option>
+    </select>
+  )
+}
+
 export default function CategoryFilters({ filterSchema, currentFilters }: CategoryFiltersProps) {
   const router      = useRouter()
   const pathname    = usePathname()

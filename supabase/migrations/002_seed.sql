@@ -44,18 +44,11 @@ insert into categories (name, slug, sort_order, intro_text, filter_schema) value
 on conflict (slug) do nothing;
 
 
--- Helper: get category id by slug
--- We use a CTE for readability
-
-with cats as (
-  select id, slug from categories
-)
-
 -- ============================================================
 -- CEMENT (per 50 kg bag)
 -- ============================================================
 insert into products (name, slug, category_id, brand, size_grade, unit, featured, stock_status)
-select * from (values
+select v.name, v.slug, c.id, v.brand, v.size_grade, v.unit, v.featured, v.stock_status from (values
   ('Premium Cement',         'premium-cement',         'cement', 'Premium',       '32.5R', 'per 50 kg bag', true,  'in_stock'),
   ('Simba Cement 32.5R',     'simba-cement-32-5r',     'cement', 'Simba',         '32.5R', 'per 50 kg bag', true,  'in_stock'),
   ('Simba Cement 42.5N',     'simba-cement-42-5n',     'cement', 'Simba',         '42.5N', 'per 50 kg bag', false, 'in_stock'),
@@ -65,14 +58,14 @@ select * from (values
   ('Savannah Cement',        'savannah-cement',        'cement', 'Savannah',      '42.5N', 'per 50 kg bag', false, 'in_stock'),
   ('Rai Cement',             'rai-cement',             'cement', 'Rai',           '32.5R', 'per 50 kg bag', false, 'in_stock')
 ) as v(name, slug, cat_slug, brand, size_grade, unit, featured, stock_status)
-join cats c on c.slug = v.cat_slug
+join categories c on c.slug = v.cat_slug
 on conflict (slug) do nothing;
 
 -- ============================================================
 -- STEEL & WIRE (per bar 12 m or per roll)
 -- ============================================================
 insert into products (name, slug, category_id, brand, size_grade, unit, featured, stock_status)
-select * from (values
+select v.name, v.slug, c.id, v.brand, v.size_grade, v.unit, v.featured, v.stock_status from (values
   ('Deformed Bar D8',   'deformed-bar-d8',   'steel-wire', null, 'D8',  'per 12 m bar', false, 'in_stock'),
   ('Deformed Bar D10',  'deformed-bar-d10',  'steel-wire', null, 'D10', 'per 12 m bar', false, 'in_stock'),
   ('Deformed Bar D12',  'deformed-bar-d12',  'steel-wire', null, 'D12', 'per 12 m bar', true,  'in_stock'),
@@ -87,14 +80,14 @@ select * from (values
   ('Binding Wire',      'binding-wire',      'steel-wire', null, '25 kg roll', 'per roll (25 kg)', false, 'in_stock'),
   ('Hoop Iron',         'hoop-iron',         'steel-wire', null, '30 m roll',  'per roll (30 m)',  false, 'in_stock')
 ) as v(name, slug, cat_slug, brand, size_grade, unit, featured, stock_status)
-join cats c on c.slug = v.cat_slug
+join categories c on c.slug = v.cat_slug
 on conflict (slug) do nothing;
 
 -- ============================================================
 -- ROOFING (per metre, state gauge)
 -- ============================================================
 insert into products (name, slug, category_id, brand, size_grade, unit, featured, stock_status)
-select * from (values
+select v.name, v.slug, c.id, v.brand, v.size_grade, v.unit, v.featured, v.stock_status from (values
   ('Box Profile Iron Sheet',    'box-profile-iron-sheet',    'roofing', null, '0.3 mm gauge', 'per metre', true,  'in_stock'),
   ('Ordinary Iron Sheet',       'ordinary-iron-sheet',       'roofing', null, '0.25 mm gauge','per metre', false, 'in_stock'),
   ('Corrugated Iron Sheet',     'corrugated-iron-sheet',     'roofing', null, '0.25 mm gauge','per metre', true,  'in_stock'),
@@ -103,28 +96,28 @@ select * from (values
   ('Reject Iron Sheet (Grade A)','reject-iron-sheet-a',      'roofing', null, 'Reject Grade A','per metre', false, 'in_stock'),
   ('Reject Iron Sheet (Grade B)','reject-iron-sheet-b',      'roofing', null, 'Reject Grade B','per metre', false, 'in_stock')
 ) as v(name, slug, cat_slug, brand, size_grade, unit, featured, stock_status)
-join cats c on c.slug = v.cat_slug
+join categories c on c.slug = v.cat_slug
 on conflict (slug) do nothing;
 
 -- ============================================================
 -- WATER TANKS (Kentank, per tank)
 -- ============================================================
 insert into products (name, slug, category_id, brand, size_grade, unit, featured, stock_status)
-select * from (values
+select v.name, v.slug, c.id, v.brand, v.size_grade, v.unit, v.featured, v.stock_status from (values
   ('Kentank 1,000 L',   'kentank-1000l',  'water-tanks', 'Kentank', '1,000 L',  'per tank', false, 'in_stock'),
   ('Kentank 2,000 L',   'kentank-2000l',  'water-tanks', 'Kentank', '2,000 L',  'per tank', true,  'in_stock'),
   ('Kentank 3,000 L',   'kentank-3000l',  'water-tanks', 'Kentank', '3,000 L',  'per tank', true,  'in_stock'),
   ('Kentank 5,000 L',   'kentank-5000l',  'water-tanks', 'Kentank', '5,000 L',  'per tank', true,  'in_stock'),
   ('Kentank 10,000 L',  'kentank-10000l', 'water-tanks', 'Kentank', '10,000 L', 'per tank', false, 'in_stock')
 ) as v(name, slug, cat_slug, brand, size_grade, unit, featured, stock_status)
-join cats c on c.slug = v.cat_slug
+join categories c on c.slug = v.cat_slug
 on conflict (slug) do nothing;
 
 -- ============================================================
 -- PAINTS (Crown, per tin — prices to be confirmed)
 -- ============================================================
 insert into products (name, slug, category_id, brand, size_grade, unit, stock_status)
-select * from (values
+select v.name, v.slug, c.id, v.brand, v.size_grade, v.unit, v.stock_status from (values
   ('Crown Vinyl Matt 1L',      'crown-vinyl-matt-1l',      'paints', 'Crown', 'Vinyl Matt 1L',      'per 1 L tin',  'in_stock'),
   ('Crown Vinyl Matt 4L',      'crown-vinyl-matt-4l',      'paints', 'Crown', 'Vinyl Matt 4L',      'per 4 L tin',  'in_stock'),
   ('Crown Vinyl Matt 20L',     'crown-vinyl-matt-20l',     'paints', 'Crown', 'Vinyl Matt 20L',     'per 20 L tin', 'in_stock'),
@@ -146,14 +139,14 @@ select * from (values
   ('Crown Epoxy 4L',           'crown-epoxy-4l',           'paints', 'Crown', 'Epoxy 4L',           'per 4 L tin',  'in_stock'),
   ('Crown Varnish 1L',         'crown-varnish-1l',         'paints', 'Crown', 'Varnish 1L',         'per 1 L tin',  'in_stock')
 ) as v(name, slug, cat_slug, brand, size_grade, unit, stock_status)
-join cats c on c.slug = v.cat_slug
+join categories c on c.slug = v.cat_slug
 on conflict (slug) do nothing;
 
 -- ============================================================
 -- GYPSUM & CEILING
 -- ============================================================
 insert into products (name, slug, category_id, brand, size_grade, unit, stock_status)
-select * from (values
+select v.name, v.slug, c.id, v.brand, v.size_grade, v.unit, v.stock_status from (values
   ('Gypsum Board 9mm',         'gypsum-board-9mm',         'gypsum-ceiling', null, '9 mm',    'per board (1.2×2.4 m)',  'in_stock'),
   ('Gypsum Board 9.5mm',       'gypsum-board-9-5mm',       'gypsum-ceiling', null, '9.5 mm',  'per board (1.2×2.4 m)',  'in_stock'),
   ('Gypsum Board 12mm',        'gypsum-board-12mm',        'gypsum-ceiling', null, '12 mm',   'per board (1.2×2.4 m)',  'in_stock'),
@@ -164,14 +157,14 @@ select * from (values
   ('Top/Bottom Runner',        'ceiling-runner',            'gypsum-ceiling', null, '0.5 mm',  'per 3 m length',         'in_stock'),
   ('Wall Angle (L-trim)',      'wall-angle',                'gypsum-ceiling', null, '0.3 mm',  'per 3 m length',         'in_stock')
 ) as v(name, slug, cat_slug, brand, size_grade, unit, stock_status)
-join cats c on c.slug = v.cat_slug
+join categories c on c.slug = v.cat_slug
 on conflict (slug) do nothing;
 
 -- ============================================================
 -- PLUMBING & PIPES
 -- ============================================================
 insert into products (name, slug, category_id, brand, size_grade, unit, stock_status)
-select * from (values
+select v.name, v.slug, c.id, v.brand, v.size_grade, v.unit, v.stock_status from (values
   ('PVC Pipe Sch-40 2"',       'pvc-pipe-sch40-2inch',      'plumbing-pipes', null, '2" Sch-40', 'per 6 m length', 'in_stock'),
   ('PVC Pipe Sch-40 3"',       'pvc-pipe-sch40-3inch',      'plumbing-pipes', null, '3" Sch-40', 'per 6 m length', 'in_stock'),
   ('Galvanised Sleeve 2"',     'galv-sleeve-2inch',         'plumbing-pipes', null, '2" GI',     'per piece',      'in_stock'),
@@ -180,21 +173,21 @@ select * from (values
   ('PVC Band Plate 2"',        'pvc-band-plate-2inch',      'plumbing-pipes', null, '2"',        'per piece',      'in_stock'),
   ('PVC Band Plate 3"',        'pvc-band-plate-3inch',      'plumbing-pipes', null, '3"',        'per piece',      'in_stock')
 ) as v(name, slug, cat_slug, brand, size_grade, unit, stock_status)
-join cats c on c.slug = v.cat_slug
+join categories c on c.slug = v.cat_slug
 on conflict (slug) do nothing;
 
 -- ============================================================
 -- FENCING (chain link, 18 m roll)
 -- ============================================================
 insert into products (name, slug, category_id, brand, size_grade, unit, featured, stock_status)
-select * from (values
+select v.name, v.slug, c.id, v.brand, v.size_grade, v.unit, v.featured, v.stock_status from (values
   ('Chain Link Fencing 4ft',  'chain-link-4ft',  'fencing', null, '4ft × 18m 14G', 'per 18 m roll', true,  'in_stock'),
   ('Chain Link Fencing 5ft',  'chain-link-5ft',  'fencing', null, '5ft × 18m 14G', 'per 18 m roll', false, 'in_stock'),
   ('Chain Link Fencing 6ft',  'chain-link-6ft',  'fencing', null, '6ft × 18m 14G', 'per 18 m roll', true,  'in_stock'),
   ('Chain Link Fencing 7ft',  'chain-link-7ft',  'fencing', null, '7ft × 18m 14G', 'per 18 m roll', false, 'in_stock'),
   ('Chain Link Fencing 8ft',  'chain-link-8ft',  'fencing', null, '8ft × 18m 14G', 'per 18 m roll', false, 'in_stock')
 ) as v(name, slug, cat_slug, brand, size_grade, unit, featured, stock_status)
-join cats c on c.slug = v.cat_slug
+join categories c on c.slug = v.cat_slug
 on conflict (slug) do nothing;
 
 
